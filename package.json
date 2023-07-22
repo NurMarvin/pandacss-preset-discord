@@ -1,0 +1,48 @@
+{
+  "name": "pandacss-preset-discord",
+  "version": "0.0.1",
+  "description": "A preset for Panda CSS that contains Discord's branding.",
+  "main": "dist/index.mjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "generate:colorTokens": "esno scripts/generateColorTokens.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NurMarvin/pandacss-preset-discord.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NurMarvin/pandacss-preset-discord/issues"
+  },
+  "keywords": [
+    "pandacss",
+    "discord",
+    "css",
+    "preset"
+  ],
+  "author": {
+    "name": "Marvin Witt",
+    "email": "contact@nurmarv.in"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@pandacss/types": "^0.7.0"
+  },
+  "devDependencies": {
+    "@types/color": "^3.0.3",
+    "@types/node": "^20.4.4",
+    "color": "^4.2.3",
+    "esno": "^0.17.0",
+    "prettier": "^3.0.0",
+    "ts-morph": "^19.0.0",
+    "tsup": "^7.1.0",
+    "typescript": "^5.1.6"
+  }
+}
