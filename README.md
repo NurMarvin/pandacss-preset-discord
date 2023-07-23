@@ -36,7 +36,7 @@ export default defineConfig({
 ## Acknowledgements
 
 - [Discord](https://discord.com/branding) for the branding
-- [Panda CSS](https://pandacss.dev) for the framework
+- [Panda CSS](https://panda-css.com) for the framework
 
 ## License
 
