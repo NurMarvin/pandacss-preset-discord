@@ -1,6 +1,6 @@
 {
   "name": "pandacss-preset-discord",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A preset for Panda CSS that contains Discord's branding.",
   "main": "dist/index.mjs",
   "module": "dist/index.mjs",

@@ -169,8 +169,6 @@ function themedToken({ dark, light, amoled = dark }: ThemedToken) {
   };
 }
 
-// Color names are seperated by a "-". We want to convert them to nested objects instead. For example, "header-primary" becomes "header: { primary: ... }", and "header-button-outline-primary-background" becomes "header: { button: { outline: { primary: { background: ... } } } }". In some cases the last part of a color name contains a state, e.g. "header-button-outline-primary-background-hover". We want to convert this to "header: { button: { outline: { primary: { background: { hover: ... } } } } }", whilst keeping the default value for "header-button-outline-primary-background" stored in "header: { button: { outline: { primary: { background: { DEFAULT: ... } } } } }".
-
 function convertColorsToObject(colors: Colors) {
   const result: Record<string, any> = {};
 
@@ -182,27 +180,6 @@ function convertColorsToObject(colors: Colors) {
       const part = parts[i];
 
       if (i === parts.length - 1) {
-        // if (part === "hover") {
-        //   // Get the previous parts
-        //   const previousParts = parts.slice(0, -1);
-
-        //   // Previous parts must include "button", "outline", "primary"
-
-        //   if (previousParts.length < 3) {
-        //     continue;
-        //   }
-
-        //   const previousPartsString = previousParts.join("-");
-
-        //   // Check if the previous parts exist in the colors object
-        //   if (previousPartsString in colors) {
-        //     console.log(
-        //       "yop",
-        //       previousPartsString,
-        //       JSON.stringify(result, null, 2)
-        //     );
-        //   }
-        // }
         current[part] = themedToken(value);
       } else {
         current[part] = current[part] || {};
@@ -215,10 +192,6 @@ function convertColorsToObject(colors: Colors) {
 }
 
 colors = convertColorsToObject(colors);
-
-// console.log(JSON.stringify(colors, null, 2));
-
-// fs.writeFileSync("colors.json", JSON.stringify(colors, null, 2), "utf-8");
 
 (async () => {
   const result = await prettier.format(
