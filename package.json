@@ -1,6 +1,6 @@
 {
   "name": "pandacss-preset-discord",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A preset for Panda CSS that contains Discord's branding.",
   "main": "dist/index.mjs",
   "module": "dist/index.mjs",
@@ -12,7 +12,8 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "generate:colorTokens": "esno scripts/generateColorTokens.ts"
+    "generate:colorTokens": "esno scripts/generateColorTokens.ts",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
